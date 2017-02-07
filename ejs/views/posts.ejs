@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src ="ejs_production.js"></script>
+</head>
+<body>
+  <div id="read">
+<ul>
+<% for(var i=0; i<fileData.length; i++) {%>
+   <li><%= fileData[i] %></li>
+<% } %>
+</ul>
+  </div>
+  <div id="write">
+  <h1>Post operation</h1>
+    <form action="/write" method="POST">
+  Content:<br>
+  <input type="text" name="data" ><br>
+  <input type="submit" value="Submit">
+</form>
+  </div>
+  <div id="update">
+    <h1>Update operation</h1>
+    <form action="/update" method="POST">
+  Content:<br>
+  <input type="text" name="data" ><br>
+  <input type="text" name="line" ><br>
+  <input type="submit" value="Submit">
+</form>
+  </div>
+  <div id="delete">
+     <h1>Delete operation</h1>
+    <form action="/destroy" method="POST">
+  Content:<br>
+  <input type="text" name="line" ><br>
+  <input type="submit" value="Submit">
+</form>
+  </div>
+
+  
+</body>
+</html>
