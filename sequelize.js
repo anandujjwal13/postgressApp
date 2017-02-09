@@ -7,7 +7,7 @@ const todoApp = {
   },
 
   insert (description) {
-    let query = `INSERT INTO tasks (DESCRIPTION , STATUS) VALUES ('${description}' ,false)`
+    let query = `INSERT INTO tasks (DESCRIPTION , STATUS) VALUES ('${description}' ,false) returning id`
     return sequelize.query(query)
   },
 
@@ -15,9 +15,21 @@ const todoApp = {
     let query = `UPDATE tasks SET DESCRIPTION = '${description}' ,STATUS = ${status} WHERE ID = ${id}`
     return sequelize.query(query)
   },
+  unSelectAll () {
+    let query = `UPDATE tasks SET STATUS = false`
+    return sequelize.query(query)
+  },
+  updateAll () {
+    let query = `UPDATE tasks SET STATUS = true`
+    return sequelize.query(query)
+  },
 
   destroy (id) {
     let query = `DELETE FROM tasks WHERE ID = ${id}`
+    return sequelize.query(query)
+  },
+  destroyCompleted () {
+    let query = `DELETE FROM tasks WHERE STATUS = true`
     return sequelize.query(query)
   }
 }

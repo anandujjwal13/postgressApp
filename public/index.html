@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="todo-css.css">
+  <link rel="stylesheet" type="text/css" href="todo-css.css"> 
 </head>
 <body onload="tasks()">
   <div id="myDIV" class="header">
   <h2>My To Do App</h2>
-  <form>
+  <form id = "addform">
   <input type="text" id="myInput" placeholder="Enter tasks here...">
-  <button class="addBtn" onclick="newElement()">Add to todos</button>
+  <button class="addBtn" onclick="newElement()" >Add to todos</button>
   </form>
 </div>
 
 <ul id="myUL">
 </ul>
+<button class="addBtn" onclick="renderAll()" >ALL</button>
+<button class="addBtn" onclick="active()" >ACTIVE</button>
+<button class="addBtn" onclick="completed()" >COMPLETED</button>
+<button class="addBtn" onclick="clearCompleted()" >CLEAR ALL COMPLETED</button>
+<button class="addBtn" onclick="selectAll()" >SELECT ALL</button>
+<button class="addBtn" onclick="unSelectAll()" >UN SELECT ALL</button>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
    crossorigin="anonymous">
    </script>
