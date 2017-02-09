@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="todo-css.css">
+</head>
+<body onload="tasks()">
+  <div id="myDIV" class="header">
+  <h2>My To Do App</h2>
+  <form>
+  <input type="text" id="myInput" placeholder="Enter tasks here...">
+  <button class="addBtn" onclick="newElement()">Add to todos</button>
+  </form>
+</div>
+
+<ul id="myUL">
+</ul>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+   crossorigin="anonymous">
+   </script>
+<script src="todo.js"> </script>
+</body>
+</html>

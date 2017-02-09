@@ -3,7 +3,11 @@ const todoApp = require('./sequelize.js')
 const bodyParser = require('body-parser')
 const app = express()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(express.static('public'))
 
+app.get('/', function (req, res) {
+  res.render('../public/todo.html')
+})
 app.put('/update/:id', urlencodedParser, function (request, response) {
   todoApp.update(request.params.id, request.body.description, request.body.status).then((result) => {
     if (result[1].rowCount === 0) {
